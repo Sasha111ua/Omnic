@@ -1,0 +1,8 @@
+H:\root\android\N-25-Tabbed\Tabbed.Core\bin\Debug\Tabbed.Core.dll
+H:\root\android\N-25-Tabbed\Tabbed.Core\bin\Debug\Tabbed.Core.pdb
+H:\root\android\N-25-Tabbed\Tabbed.Core\bin\Debug\Cirrious.CrossCore.dll
+H:\root\android\N-25-Tabbed\Tabbed.Core\bin\Debug\Cirrious.MvvmCross.dll
+H:\root\android\N-25-Tabbed\Tabbed.Core\bin\Debug\Cirrious.MvvmCross.Localization.dll
+H:\root\android\N-25-Tabbed\Tabbed.Core\obj\Debug\Tabbed.Core.csprojResolveAssemblyReference.cache
+H:\root\android\N-25-Tabbed\Tabbed.Core\obj\Debug\Tabbed.Core.dll
+H:\root\android\N-25-Tabbed\Tabbed.Core\obj\Debug\Tabbed.Core.pdb
