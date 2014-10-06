@@ -7,7 +7,7 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:id="@+id/linear_layout"
-    android:background="#f00000">
+    android:background="#0078f0">
     <TextView
         android:text="Text"
         android:layout_width="wrap_content"

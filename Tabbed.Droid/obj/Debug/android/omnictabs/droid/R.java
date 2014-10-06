@@ -67,19 +67,20 @@ containing a value of this type.
     }
     public static final class id {
         public static final int MvxBindingTagUnique=0x7f040000;
-        public static final int NameLabel=0x7f040008;
-        public static final int big_image_view=0x7f04000c;
-        public static final int btnCancelDelete=0x7f04000b;
-        public static final int btnSave=0x7f04000a;
+        public static final int NameLabel=0x7f040009;
+        public static final int big_image_view=0x7f04000d;
+        public static final int btnCancelDelete=0x7f04000c;
+        public static final int btnSave=0x7f04000b;
         public static final int button1=0x7f040001;
-        public static final int button2=0x7f04000d;
+        public static final int button2=0x7f04000e;
+        public static final int linear_layout=0x7f040004;
         public static final int list_view=0x7f040002;
         public static final int list_view2=0x7f040003;
-        public static final int textView1=0x7f040004;
-        public static final int textView2=0x7f040005;
-        public static final int textView3=0x7f040006;
-        public static final int textView4=0x7f040007;
-        public static final int txtName=0x7f040009;
+        public static final int textView1=0x7f040005;
+        public static final int textView2=0x7f040006;
+        public static final int textView3=0x7f040007;
+        public static final int textView4=0x7f040008;
+        public static final int txtName=0x7f04000a;
     }
     public static final class layout {
         public static final int child1view=0x7f030000;
@@ -87,11 +88,12 @@ containing a value of this type.
         public static final int child3view=0x7f030002;
         public static final int firstview=0x7f030003;
         public static final int item_customlocation=0x7f030004;
-        public static final int item_image=0x7f030005;
-        public static final int locationentitydetails=0x7f030006;
-        public static final int omnictabsview=0x7f030007;
-        public static final int splashscreen=0x7f030008;
-        public static final int zoomedimageview=0x7f030009;
+        public static final int item_customlocationnorth=0x7f030005;
+        public static final int item_image=0x7f030006;
+        public static final int locationentitydetails=0x7f030007;
+        public static final int omnictabsview=0x7f030008;
+        public static final int splashscreen=0x7f030009;
+        public static final int zoomedimageview=0x7f03000a;
     }
     public static final class string {
         public static final int ApplicationName=0x7f060001;

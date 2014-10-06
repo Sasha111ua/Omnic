@@ -112,6 +112,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="SQLite.Implementation.cs" />
+    <Compile Include="Views\LocationEntityListView.cs" />
     <Compile Include="Views\OmnicTabsView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +134,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\LocationEntityDetails.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Item_Customlocationnorth.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

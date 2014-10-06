@@ -40,7 +40,8 @@ namespace OmnicTabsApplication
             conn = new Connection(path);
 
             LocMgr = new LocationEntityManager(conn);
-            LocMgr.SaveItem(new LocationEntity() { Name = "Home", Latitude = 46.122416, Longitude = 95.904083, TimeUpdated = DateTime.Now });
+            LocMgr.SaveItem(new LocationEntity() { Name = "Home", Latitude = -5.122416, Longitude = 95.904083, TimeUpdated = DateTime.Now });
+            LocMgr.SaveItem(new LocationEntity() { Name = "Home2", Latitude = 51.122416, Longitude = 95.904083, TimeUpdated = DateTime.Now });
             Parameters.LocationEntityManager = LocMgr;
         }
     }

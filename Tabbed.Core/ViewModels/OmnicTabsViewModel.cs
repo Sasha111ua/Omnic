@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using Cirrious.MvvmCross.ViewModels;
@@ -109,7 +110,7 @@ namespace OmnicTabs.Core.ViewModels
     {
         public Child2ViewModel()
         {
-            LocationEntity = new ObservableCollection<LocationEntity>();
+          //  LocationEntity = new ObservableCollection<LocationEntity>();
             LocationEntity = new ObservableCollection<LocationEntity>(Parameters.LocationEntityManager.GetItems().ToList());
         }
         private ObservableCollection<LocationEntity> _locationEntity;
@@ -131,6 +132,31 @@ namespace OmnicTabs.Core.ViewModels
                 return _itemClickCommand;*/
             }
         }
+
+        public ICommand AddCommand
+        {
+            get
+            {
+                return new MvxCommand(
+                    () =>
+                        ShowViewModel(typeof(LocationEntityDetailsViewModel)));
+            }
+        }
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new MvxCommand(
+                    RefreshListView
+                       );
+            }
+        }
+
+        void RefreshListView()
+        {
+            LocationEntity = new ObservableCollection<LocationEntity>(Parameters.LocationEntityManager.GetItems().ToList());
+        }
+
         LocationEntity _chosenItem;
         public LocationEntity ChosenItem
         {
@@ -185,7 +211,7 @@ namespace OmnicTabs.Core.ViewModels
     {
         public LocationEntityDetailsViewModel()
         {
-            LocationEntity = Parameters.LocationEntity;
+            LocationEntity = Parameters.LocationEntity?? new LocationEntity();
         }
 
         private LocationEntity _locationEntity;
@@ -211,7 +237,6 @@ namespace OmnicTabs.Core.ViewModels
             set { LocationEntity.TimeUpdated = value; RaisePropertyChanged(() => TimeUpdated); }
         }
 
-
         private MvxCommand _cancelCommand;
         public ICommand CancelCommand
         {
@@ -236,7 +261,10 @@ namespace OmnicTabs.Core.ViewModels
             LocationEntity.TimeUpdated = DateTime.Now;
             Parameters.LocationEntityManager.SaveItem(LocationEntity);
             Close(this);
+        }
 
+        public string Color {
+            get { return "background_light"; }
         }
 
     }

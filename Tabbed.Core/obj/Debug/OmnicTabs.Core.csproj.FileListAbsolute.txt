@@ -43,7 +43,6 @@ C:\TestO\Tabbed.Core\bin\Debug\System.Runtime.xml
 C:\TestO\Tabbed.Core\bin\Debug\System.Threading.Tasks.xml
 C:\TestO\Tabbed.Core\obj\Debug\OmnicTabs.Core.csprojResolveAssemblyReference.cache
 C:\TestO\Omnic\Tabbed.Core\obj\Debug\OmnicTabs.Core.csproj.App.config
-C:\TestO\Omnic\Tabbed.Core\obj\Debug\OmnicTabs.Core.csprojResolveAssemblyReference.cache
 C:\TestO\Omnic\Tabbed.Core\obj\Debug\OmnicTabs.Core.dll
 C:\TestO\Omnic\Tabbed.Core\obj\Debug\OmnicTabs.Core.pdb
 C:\TestO\Omnic\Tabbed.Core\bin\Debug\OmnicTabs.Core.dll.config

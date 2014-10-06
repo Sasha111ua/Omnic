@@ -141,3 +141,4 @@ C:\TestO\Omnic\Tabbed.Droid\bin\Debug\System.Net.dll
 C:\TestO\Omnic\Tabbed.Droid\bin\Debug\System.Windows.dll
 C:\TestO\Omnic\Tabbed.Droid\bin\Debug\System.Xml.Serialization.dll
 C:\TestO\Omnic\Tabbed.Droid\obj\Debug\res\layout\locationentitydetails.xml
+C:\TestO\Omnic\Tabbed.Droid\obj\Debug\res\layout\item_customlocationnorth.xml

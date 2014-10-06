@@ -1,10 +1,13 @@
 using System;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Widget;
+using Cirrious.MvvmCross.Binding.BindingContext;
+using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Binding.Droid.Views;
 using Cirrious.MvvmCross.Droid.Views;
 using OmnicTabs.Core.ViewModels;
@@ -35,7 +38,6 @@ namespace OmnicTabs.Droid.Views
             _imageView = FindViewById<MvxImageView>(Resource.Id.big_image_view);
             var bitmapDrawable = _imageView.Drawable as BitmapDrawable;
             if (bitmapDrawable != null) _image = bitmapDrawable.Bitmap;
-          //  OmnicTabsApp.Current.CustLocMgr.SaveItem(new LocationEntity() { Name = "aaa" });
         }
 
         private async void DownloadAsync(object sender, EventArgs e)
@@ -137,10 +139,13 @@ namespace OmnicTabs.Droid.Views
     [Activity(Label = "View for Child2ViewModel")]
     public class Child2View : MvxActivity
     {
+        private MvxListView _listView;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Child2View);
+            _listView = FindViewById<MvxListView>(Resource.Id.list_view2);
+            _listView.Adapter = new CustomAdapter(this, (IMvxAndroidBindingContext) BindingContext);
         }
     }
     [Activity(Label = "View for Child3ViewModel")]

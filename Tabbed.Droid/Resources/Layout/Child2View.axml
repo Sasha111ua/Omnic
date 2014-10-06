@@ -16,4 +16,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/button1"
         local:MvxBind="Click AddCommand" />
+    <Button
+        android:text="Refresh"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        local:MvxBind="Click RefreshCommand" />
 </LinearLayout>

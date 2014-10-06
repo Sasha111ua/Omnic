@@ -1,7 +1,7 @@
 package omnictabs.droid.views;
 
 
-public class LocationEntityDetailsView
+public class ItemCustomLocation
 	extends cirrious.mvvmcross.droid.views.MvxActivity
 	implements
 		mono.android.IGCUserPeer
@@ -11,15 +11,15 @@ public class LocationEntityDetailsView
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("OmnicTabs.Droid.Views.LocationEntityDetailsView, OmnicTabs.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", LocationEntityDetailsView.class, __md_methods);
+		mono.android.Runtime.register ("OmnicTabs.Droid.Views.ItemCustomLocation, OmnicTabs.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", ItemCustomLocation.class, __md_methods);
 	}
 
 
-	public LocationEntityDetailsView () throws java.lang.Throwable
+	public ItemCustomLocation () throws java.lang.Throwable
 	{
 		super ();
-		if (getClass () == LocationEntityDetailsView.class)
-			mono.android.TypeManager.Activate ("OmnicTabs.Droid.Views.LocationEntityDetailsView, OmnicTabs.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+		if (getClass () == ItemCustomLocation.class)
+			mono.android.TypeManager.Activate ("OmnicTabs.Droid.Views.ItemCustomLocation, OmnicTabs.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 
