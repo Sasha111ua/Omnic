@@ -17,19 +17,21 @@
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Text LocationEntity.Name" />
+        local:MvxBind="Text LocationEntity.Name"
+        android:inputType="text" />
     <TextView
         android:id="@+id/NameLabel"
         android:text="Latitude:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/txtL"
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numeric="decimal"
+        android:inputType="numberSigned"
+        android:digits="0123456789.-"
         local:MvxBind="Text Latitude" />
     <TextView
         android:id="@+id/NameLabel"
@@ -37,12 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/txtLong"
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numeric="decimal"
+        android:inputType="numberSigned"
+        android:digits="0123456789.-"
         local:MvxBind="Text Longitude" />
     <Button
         android:id="@+id/btnSave"

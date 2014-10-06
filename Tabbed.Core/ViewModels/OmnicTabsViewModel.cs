@@ -222,14 +222,22 @@ namespace OmnicTabs.Core.ViewModels
 
         public string Longitude
         {
-            get { return LocationEntity.Longitude.ToString(); }
+            get { return LocationEntity.Longitude.HasValue?LocationEntity.Longitude.Value.ToString():String.Empty; }
             set { LocationEntity.Longitude = Convert.ToDouble(value); RaisePropertyChanged(() => Longitude); }
         }
 
         public string Latitude
         {
             get { return LocationEntity.Latitude.ToString(); }
-            set { LocationEntity.Latitude = Convert.ToDouble(value); RaisePropertyChanged(() => Latitude); }
+            set
+            {
+                if (value == "")
+                    LocationEntity.Latitude = null;
+                else if (value == "-")
+                    LocationEntity.Latitude = -0;
+                else
+                LocationEntity.Latitude = Convert.ToDouble(value);
+            }
         }
         public DateTime TimeUpdated
         {
@@ -243,6 +251,7 @@ namespace OmnicTabs.Core.ViewModels
             get
             {
                 _cancelCommand = _cancelCommand ?? new MvxCommand(()=>Close(this));
+                Parameters.LocationEntity = new LocationEntity();
                 return _cancelCommand;
             }
         }
@@ -252,6 +261,7 @@ namespace OmnicTabs.Core.ViewModels
             get
             {
                 _saveCommand = _saveCommand ?? new MvxCommand(SaveLocationEntity);
+                Parameters.LocationEntity = new LocationEntity();
                 return _saveCommand;
             }
         }

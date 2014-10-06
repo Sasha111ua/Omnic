@@ -12,8 +12,8 @@ namespace OmnicTabs.Core.BusinessLayer
         [PrimaryKey, AutoIncrement]
         public int Id{ get ;set ; }
         public string Name { get; set; }
-        public double Latitude { get; set; } //Vertical
-        public double Longitude { get; set; } //Horizontal
+        public double? Latitude { get; set; } //Vertical
+        public double? Longitude { get; set; } //Horizontal
         public DateTime TimeUpdated { get; set; }
     }
 }

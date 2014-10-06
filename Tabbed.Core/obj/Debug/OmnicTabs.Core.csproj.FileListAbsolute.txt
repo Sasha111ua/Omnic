@@ -63,3 +63,4 @@ C:\TestO\Omnic\Tabbed.Core\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\TestO\Omnic\Tabbed.Core\bin\Debug\System.IO.xml
 C:\TestO\Omnic\Tabbed.Core\bin\Debug\System.Runtime.xml
 C:\TestO\Omnic\Tabbed.Core\bin\Debug\System.Threading.Tasks.xml
+C:\TestO\Omnic\Tabbed.Core\obj\Debug\OmnicTabs.Core.csprojResolveAssemblyReference.cache
