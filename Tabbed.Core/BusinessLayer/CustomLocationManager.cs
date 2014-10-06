@@ -6,11 +6,11 @@ using System.Text;
 
 namespace OmnicTabs.Core.BusinessLayer
 {
-    public class CustomLocationManager
+    public class LocationEntityManager
     {
         DAL.CusomLocationRepository repository;
 
-        public CustomLocationManager(SQLiteConnection conn) 
+        public LocationEntityManager(SQLiteConnection conn) 
         {
             repository = new DAL.CusomLocationRepository(conn, "");
         }

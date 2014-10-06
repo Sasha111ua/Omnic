@@ -35,12 +35,8 @@ namespace OmnicTabs.Droid.Views
             _imageView = FindViewById<MvxImageView>(Resource.Id.big_image_view);
             var bitmapDrawable = _imageView.Drawable as BitmapDrawable;
             if (bitmapDrawable != null) _image = bitmapDrawable.Bitmap;
-
-            OmnicTabsApp.Current.CustLocMgr.SaveItem(new LocationEntity() { Name = "aaa" });
-
-
+          //  OmnicTabsApp.Current.CustLocMgr.SaveItem(new LocationEntity() { Name = "aaa" });
         }
-
 
         private async void DownloadAsync(object sender, EventArgs e)
         {
@@ -154,6 +150,15 @@ namespace OmnicTabs.Droid.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Child3View);
+        }
+    }
+    [Activity(Label = "View for LocationEntityDetailsViewModel")]
+    public class LocationEntityDetails : MvxActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.LocationEntityDetails);
         }
     }
 

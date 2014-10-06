@@ -6,6 +6,7 @@ using Cirrious.MvvmCross.ViewModels;
 using OmnicTabs.Core.BusinessLayer;
 using OmnicTabs.Core.Services;
 using System.Threading.Tasks;
+using System;
 
 namespace OmnicTabs.Core.ViewModels
 {
@@ -106,29 +107,41 @@ namespace OmnicTabs.Core.ViewModels
     public class Child2ViewModel
     : MvxViewModel
     {
-        public CustomLocationManager CusLocMgr { get; set; }
-       // OmnicTabs.DL.SQLite.Connection _conn;
         public Child2ViewModel()
         {
-            CustomLocations = new List<LocationEntity>();
-         //   CustomLocations.Add(new CustomLocation() { Id = 1, Name = "111" });
-            CustomLocations = Parameters.CustomLocationManager.GetItems().ToList();
+            LocationEntity = new ObservableCollection<LocationEntity>();
+            LocationEntity = new ObservableCollection<LocationEntity>(Parameters.LocationEntityManager.GetItems().ToList());
         }
-        private List<LocationEntity> _customLocations;
-        public List<LocationEntity> CustomLocations
+        private ObservableCollection<LocationEntity> _locationEntity;
+        public ObservableCollection<LocationEntity> LocationEntity
         {
-            get { return _customLocations; }
-            set { _customLocations = value; RaisePropertyChanged(() => CustomLocations); }
+            get { return _locationEntity; }
+            set { _locationEntity = value; RaisePropertyChanged(() => LocationEntity); }
         }
-        private MvxCommand _deleteCommand;
-      /*  public ICommand DeleteCommand
+        private MvxCommand _itemClickCommand;
+        public ICommand ItemClickCommand
         {
             get
             {
-                _deleteCommand = _deleteCommand ?? new MvxCommand(Child1ViewModel.DeleteImage);
-                return _deleteCommand;
+                return new MvxCommand(
+                    () => 
+                        ShowViewModel(typeof(LocationEntityDetailsViewModel)));
+                /*
+                _itemClickCommand = _itemClickCommand ?? new MvxCommand(NavigateToDetails);
+                return _itemClickCommand;*/
             }
-        }*/
+        }
+        LocationEntity _chosenItem;
+        public LocationEntity ChosenItem
+        {
+            get { return _chosenItem; }
+            set
+            {
+                _chosenItem = value;
+                Parameters.LocationEntity = value;
+                RaisePropertyChanged(() => ChosenItem);
+            }
+        }
         
     }
     public class Child3ViewModel
@@ -166,6 +179,68 @@ namespace OmnicTabs.Core.ViewModels
            }
        }
     }
+
+    public class LocationEntityDetailsViewModel
+        : MvxViewModel
+    {
+        public LocationEntityDetailsViewModel()
+        {
+            LocationEntity = Parameters.LocationEntity;
+        }
+
+        private LocationEntity _locationEntity;
+        public LocationEntity LocationEntity {
+            get { return _locationEntity; }
+            set { _locationEntity = value; RaisePropertyChanged(()=> LocationEntity); }
+        }
+
+        public string Longitude
+        {
+            get { return LocationEntity.Longitude.ToString(); }
+            set { LocationEntity.Longitude = Convert.ToDouble(value); RaisePropertyChanged(() => Longitude); }
+        }
+
+        public string Latitude
+        {
+            get { return LocationEntity.Latitude.ToString(); }
+            set { LocationEntity.Latitude = Convert.ToDouble(value); RaisePropertyChanged(() => Latitude); }
+        }
+        public DateTime TimeUpdated
+        {
+            get { return LocationEntity.TimeUpdated; }
+            set { LocationEntity.TimeUpdated = value; RaisePropertyChanged(() => TimeUpdated); }
+        }
+
+
+        private MvxCommand _cancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                _cancelCommand = _cancelCommand ?? new MvxCommand(()=>Close(this));
+                return _cancelCommand;
+            }
+        }
+        private MvxCommand _saveCommand;
+        public ICommand SaveCommand
+        {
+            get
+            {
+                _saveCommand = _saveCommand ?? new MvxCommand(SaveLocationEntity);
+                return _saveCommand;
+            }
+        }
+
+        void SaveLocationEntity()
+        {
+            LocationEntity.TimeUpdated = DateTime.Now;
+            Parameters.LocationEntityManager.SaveItem(LocationEntity);
+            Close(this);
+
+        }
+
+    }
+    
     public class Parameters
     {
        static string _imageUrl;
@@ -184,10 +259,18 @@ namespace OmnicTabs.Core.ViewModels
             set { _imageToDel = value; }
         }
 
-        private static CustomLocationManager _customLocationManager;
-        public static CustomLocationManager CustomLocationManager {
-            get { return _customLocationManager; }
-            set { _customLocationManager = value; }
+        private static LocationEntityManager _locationEntityManager;
+        public static LocationEntityManager LocationEntityManager
+        {
+            get { return _locationEntityManager; }
+            set { _locationEntityManager = value; }
+        }
+
+        private static LocationEntity _locationEntity;
+        public static LocationEntity LocationEntity
+        {
+            get { return  _locationEntity; }
+            set { _locationEntity = value; }
         }
     }
 }

@@ -93,14 +93,23 @@ namespace OmnicTabs.Droid
 			// aapt resource value: 0x7f040000
 			public const int MvxBindingTagUnique = 2130968576;
 			
-			// aapt resource value: 0x7f040005
-			public const int big_image_view = 2130968581;
+			// aapt resource value: 0x7f040008
+			public const int NameLabel = 2130968584;
+			
+			// aapt resource value: 0x7f04000c
+			public const int big_image_view = 2130968588;
+			
+			// aapt resource value: 0x7f04000b
+			public const int btnCancelDelete = 2130968587;
+			
+			// aapt resource value: 0x7f04000a
+			public const int btnSave = 2130968586;
 			
 			// aapt resource value: 0x7f040001
 			public const int button1 = 2130968577;
 			
-			// aapt resource value: 0x7f040006
-			public const int button2 = 2130968582;
+			// aapt resource value: 0x7f04000d
+			public const int button2 = 2130968589;
 			
 			// aapt resource value: 0x7f040002
 			public const int list_view = 2130968578;
@@ -110,6 +119,18 @@ namespace OmnicTabs.Droid
 			
 			// aapt resource value: 0x7f040004
 			public const int textView1 = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int textView2 = 2130968581;
+			
+			// aapt resource value: 0x7f040006
+			public const int textView3 = 2130968582;
+			
+			// aapt resource value: 0x7f040007
+			public const int textView4 = 2130968583;
+			
+			// aapt resource value: 0x7f040009
+			public const int txtName = 2130968585;
 			
 			static Id()
 			{
@@ -143,13 +164,16 @@ namespace OmnicTabs.Droid
 			public const int Item_Image = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int OmnicTabsView = 2130903046;
+			public const int LocationEntityDetails = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int SplashScreen = 2130903047;
+			public const int OmnicTabsView = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int ZoomedImageView = 2130903048;
+			public const int SplashScreen = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int ZoomedImageView = 2130903049;
 			
 			static Layout()
 			{

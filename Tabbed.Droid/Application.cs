@@ -22,7 +22,7 @@ namespace OmnicTabsApplication
     {
         public static OmnicTabsApp Current { get; private set; }
         
-        public CustomLocationManager CustLocMgr { get; set; }
+        public LocationEntityManager LocMgr { get; set; }
         Connection conn;
 
         public OmnicTabsApp(IntPtr handle, global::Android.Runtime.JniHandleOwnership transfer)
@@ -39,9 +39,9 @@ namespace OmnicTabsApplication
             var path = Path.Combine(libraryPath, sqliteFilename);
             conn = new Connection(path);
 
-            CustLocMgr = new CustomLocationManager(conn);
-            CustLocMgr.SaveItem(new LocationEntity() { Name = "Home", Latitude = 46.122416, Longitude = 95.904083, TimeUpdated = DateTime.Now});
-            Parameters.CustomLocationManager = CustLocMgr;
+            LocMgr = new LocationEntityManager(conn);
+            LocMgr.SaveItem(new LocationEntity() { Name = "Home", Latitude = 46.122416, Longitude = 95.904083, TimeUpdated = DateTime.Now });
+            Parameters.LocationEntityManager = LocMgr;
         }
     }
 }

@@ -4,6 +4,7 @@ OmnicTabs.Droid.Views.GrandChildView;omnictabs.droid.views.GrandChildView
 OmnicTabs.Droid.Views.Child1View;omnictabs.droid.views.Child1View
 OmnicTabs.Droid.Views.Child2View;omnictabs.droid.views.Child2View
 OmnicTabs.Droid.Views.Child3View;omnictabs.droid.views.Child3View
+OmnicTabs.Droid.Views.LocationEntityDetails;omnictabs.droid.views.LocationEntityDetails
 OmnicTabs.Droid.Views.OmnicTabsView;omnictabs.droid.views.OmnicTabsView
 Cirrious.CrossCore.Droid.MvxJavaContainer;cirrious.crosscore.droid.MvxJavaContainer
 Cirrious.CrossCore.Droid.MvxJavaContainer`1;cirrious.crosscore.droid.MvxJavaContainer_1
