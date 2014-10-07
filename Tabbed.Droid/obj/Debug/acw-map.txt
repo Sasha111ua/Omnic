@@ -37,3 +37,4 @@ Cirrious.MvvmCross.Droid.Views.MvxActivity;cirrious.mvvmcross.droid.views.MvxAct
 Cirrious.MvvmCross.Droid.Simple.MvxSimpleBindingActivity;cirrious.mvvmcross.droid.simple.MvxSimpleBindingActivity
 Cirrious.MvvmCross.Droid.Views.MvxSplashScreenActivity;cirrious.mvvmcross.droid.views.MvxSplashScreenActivity
 Cirrious.MvvmCross.Droid.Views.MvxTabActivity;cirrious.mvvmcross.droid.views.MvxTabActivity
+Cirrious.MvvmCross.Plugins.Location.Droid.MvxLocationListener;cirrious.mvvmcross.plugins.location.droid.MvxLocationListener

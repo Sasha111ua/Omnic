@@ -3,22 +3,24 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using OmnicTabs.Core.BusinessLayer;
 using OmnicTabs.Core.Services;
 using System.Threading.Tasks;
 using System;
+using Cirrious.MvvmCross.Plugins.Location;
 
 namespace OmnicTabs.Core.ViewModels
 {
     public class OmnicTabsViewModel 
 		: MvxViewModel
     {
-        public OmnicTabsViewModel()
+        public OmnicTabsViewModel(IMvxLocationWatcher watcher)
         {
             Child1 = new Child1ViewModel(new ImageLoader());
             Child2 = new Child2ViewModel();
-            Child3 = new Child3ViewModel();
+            Child3 = new Child3ViewModel(watcher);
         }
         private Child1ViewModel _child1;
         public Child1ViewModel Child1
@@ -110,7 +112,6 @@ namespace OmnicTabs.Core.ViewModels
     {
         public Child2ViewModel()
         {
-          //  LocationEntity = new ObservableCollection<LocationEntity>();
             LocationEntity = new ObservableCollection<LocationEntity>(Parameters.LocationEntityManager.GetItems().ToList());
         }
         private ObservableCollection<LocationEntity> _locationEntity;
@@ -158,6 +159,7 @@ namespace OmnicTabs.Core.ViewModels
         }
 
         LocationEntity _chosenItem;
+        private IMvxLocationWatcher watcher;
         public LocationEntity ChosenItem
         {
             get { return _chosenItem; }
@@ -170,16 +172,42 @@ namespace OmnicTabs.Core.ViewModels
         }
         
     }
-    public class Child3ViewModel
+    public class Child3ViewModel 
     : MvxViewModel
     {
-        private string _oink = "42";
-        public string Oink
-        {
-            get { return _oink; }
-            set { _oink = value; RaisePropertyChanged(() => Oink); }
+
+        private IMvxLocationWatcher _watcher;
+
+
+        private double _lng;
+        public double Lng {
+            get { return  _lng; }
+            set { _lng = value; RaisePropertyChanged(()=> Lng); }
         }
-        
+        private double _lt;
+        public double Lt
+        {
+            get { return _lt; }
+            set { _lt = value; RaisePropertyChanged(()=> Lt); }
+        }
+
+        public Child3ViewModel(IMvxLocationWatcher watcher)
+        {
+
+            _watcher = watcher;
+            _watcher.Start(new MvxLocationOptions(), OnFix, OnError);
+        }
+
+        private void OnError(MvxLocationError obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OnFix(MvxGeoLocation obj)
+        {
+            Lt = obj.Coordinates.Latitude;
+            Lng = obj.Coordinates.Longitude;
+        }
     }
     public class GrandChildViewModel
         : MvxViewModel

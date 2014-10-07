@@ -6,10 +6,12 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Widget;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Binding.Droid.Views;
 using Cirrious.MvvmCross.Droid.Views;
+using Cirrious.MvvmCross.Plugins.Location;
 using OmnicTabs.Core.ViewModels;
 using System.IO;
 using OmnicTabs.DL.SQLite;
@@ -180,7 +182,7 @@ namespace OmnicTabs.Droid.Views
             {
                 if (ViewModel != null) 
                     return ViewModel as OmnicTabsViewModel;
-                return new OmnicTabsViewModel();
+                return new OmnicTabsViewModel(Mvx.Resolve<IMvxLocationWatcher>());
             }
         }
 

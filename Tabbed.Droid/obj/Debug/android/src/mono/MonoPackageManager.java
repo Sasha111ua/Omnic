@@ -79,6 +79,8 @@ class MonoPackageManager_Resources {
 		"Cirrious.MvvmCross.Plugins.DownloadCache.Droid.dll",
 		"Cirrious.MvvmCross.Plugins.File.dll",
 		"Cirrious.MvvmCross.Plugins.File.Droid.dll",
+		"Cirrious.MvvmCross.Plugins.Location.dll",
+		"Cirrious.MvvmCross.Plugins.Location.Droid.dll",
 		"OmnicTabs.Core.dll",
 		"SQLite.Net.dll",
 		"System.Collections.Concurrent.dll",

@@ -1,4 +1,6 @@
 using Cirrious.CrossCore.IoC;
+using Cirrious.MvvmCross.ViewModels;
+using OmnicTabs.Core.ViewModels;
 
 namespace OmnicTabs.Core
 {
@@ -11,7 +13,8 @@ namespace OmnicTabs.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 				
-            RegisterAppStart<ViewModels.OmnicTabsViewModel>();
+           // RegisterAppStart<ViewModels.OmnicTabsViewModel>();
+            RegisterAppStart(new MvxAppStart<OmnicTabsViewModel>());
         }
     }
 }

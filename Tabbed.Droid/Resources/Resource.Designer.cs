@@ -111,8 +111,8 @@ namespace OmnicTabs.Droid
 			// aapt resource value: 0x7f040010
 			public const int button2 = 2130968592;
 			
-			// aapt resource value: 0x7f040004
-			public const int linear_layout = 2130968580;
+			// aapt resource value: 0x7f040005
+			public const int linear_layout = 2130968581;
 			
 			// aapt resource value: 0x7f040002
 			public const int list_view = 2130968578;
@@ -120,8 +120,8 @@ namespace OmnicTabs.Droid
 			// aapt resource value: 0x7f040003
 			public const int list_view2 = 2130968579;
 			
-			// aapt resource value: 0x7f040005
-			public const int textView1 = 2130968581;
+			// aapt resource value: 0x7f040004
+			public const int textView1 = 2130968580;
 			
 			// aapt resource value: 0x7f040006
 			public const int textView2 = 2130968582;
