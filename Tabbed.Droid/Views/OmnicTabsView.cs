@@ -26,6 +26,7 @@ namespace OmnicTabs.Droid.Views
         Button _buttonRemove;
         MvxImageView _imageView;
         Bitmap _image;
+        private string _imagePath;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -38,6 +39,9 @@ namespace OmnicTabs.Droid.Views
             _imageView = FindViewById<MvxImageView>(Resource.Id.big_image_view);
             var bitmapDrawable = _imageView.Drawable as BitmapDrawable;
             if (bitmapDrawable != null) _image = bitmapDrawable.Bitmap;
+
+            var viewModel = (GrandChildViewModel)ViewModel;
+            _imagePath = viewModel.ImageUrl;
         }
 
         private async void DownloadAsync(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace OmnicTabs.Droid.Views
             {
                 documentsPath.Mkdir();
             }
-            var localFilename = Parameters.GetImageUrl().GetHashCode() + ".jpg"; // TODO use Random
+            var localFilename = _imagePath.GetHashCode() + ".jpg"; // TODO use Random
             var localPath = System.IO.Path.Combine(documentsPath.AbsolutePath, localFilename);
 
             using (var stream = new FileStream(localPath, FileMode.OpenOrCreate))
